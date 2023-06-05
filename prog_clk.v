@@ -18,13 +18,16 @@ period = ((1/(freq * (10 ** 6))) * (10 ** 9));
 half_period = (period/2);
 end
 
+//Way1 to generate clock
 always #(half_period) clk1 = clk1 + 1'b1;
 
+//Way2 to generate clock
 always begin
 	#(half_period) clk2 = clk2 + 1'b1;
 	#(half_period) clk2 = clk2 - 1'b1;
 end
 
+//Way3 to generate clock
 always begin
 
 	if(clk3)
